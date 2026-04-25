@@ -1,1 +1,1 @@
-https://github.com/Tavansev/smart-table#
+https://github.com/Tavansev/smart-table

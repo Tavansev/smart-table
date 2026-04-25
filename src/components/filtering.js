@@ -1,4 +1,4 @@
-import {createComparison, defaultRules} from "../lib/compare.js";
+import { createComparison, defaultRules } from "../lib/compare.js";
 
 // @todo: #4.3 — настроить компаратор
 const compare = createComparison(defaultRules);
@@ -29,6 +29,13 @@ export function initFiltering(elements, indexes) {
         }
 
         // @todo: #4.5 — отфильтровать данные используя компаратор
+        if (state.totalFrom || state.totalTo) {
+            state.total = [
+                state.totalFrom ? parseFloat(state.totalFrom) : '',
+                state.totalTo ? parseFloat(state.totalTo) : ''
+            ];
+        }
+
         return data.filter(row => compare(row, state));
     }
 }
